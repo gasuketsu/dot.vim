@@ -201,3 +201,7 @@ let g:multiple_cursor_prev_key='<C-h>'
 let g:multiple_cursor_skip_key='<C-x>'
 let g:multiple_cursor_quit_key='<Esc>'
 
+"--------------------------
+" splice.vim
+"--------------------------
+let g:splice_initial_layout_grid = 2
