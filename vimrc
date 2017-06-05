@@ -204,4 +204,5 @@ let g:multiple_cursor_quit_key='<Esc>'
 "--------------------------
 " splice.vim
 "--------------------------
-let g:splice_initial_layout_grid = 2
+let g:splice_initial_layout_grid = 0
+let g:splice_initial_scrollbind_grid = 1
