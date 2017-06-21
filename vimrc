@@ -107,7 +107,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set cindent
-set cino=>2,l1,N-s,g0,(0,W4
+set cino=>2,l1,N-s,g0,(0,W2
 
 " enable to delete newline
 set backspace=2
