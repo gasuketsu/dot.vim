@@ -30,6 +30,8 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'sjl/splice.vim'
+Plug 'kana/vim-operator-user'
+Plug 'rhysd/vim-clang-format'
 " Color Schemes
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -206,3 +208,24 @@ let g:multiple_cursor_quit_key='<Esc>'
 "--------------------------
 let g:splice_initial_layout_grid = 0
 let g:splice_initial_scrollbind_grid = 1
+
+"--------------------------
+" clang-format
+"--------------------------
+let g:clang_format#command = "clang-format-3.8"
+let g:clang_format#code_style = "mozilla"
+let g:clang_format#style_options = {
+      \ "AlignEscapedNewlinesLeft": "true",
+      \ "AllowShortIfStatementsOnASingleLine" : "true",
+      \ "AllowShortLoopsOnASingleLine" : "true",
+      \ "BinPackArguments" : "false",
+      \ "BinPackParameters" : "false",
+      \ "MaxEmptyLinesToKeep" : 2,
+      \ "TabWidth" : 4}
+
+let g:clang_format#detect_style_file = 1
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
