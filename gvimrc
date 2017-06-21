@@ -1,7 +1,7 @@
 " Font
 if has("win32") || has("win64")
-  set guifont=Migu\ 2M:h12:cSHIFTJIS
-  set printfont=Migu\ 2M:h12:cSHIFTJIS
+  set guifont=CamingoCode:h11:cANSI
+  set printfont=CamingoCode:h11:cANSI
 elseif has("mac")
   set guifont=Migu\ 2M:h16
   set printfont=Migu\ 2M:h16
