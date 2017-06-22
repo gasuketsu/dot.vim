@@ -10,6 +10,8 @@ else
   set printfont=Migu\ 2M\ 11
 endif
 
+set linespace=0
+
 " Colorscheme
 set background=dark
 colorscheme gruvbox
