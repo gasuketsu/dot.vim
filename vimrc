@@ -32,6 +32,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'sjl/splice.vim'
 Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
+Plug 'saltstack/salt-vim'
 " Color Schemes
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
