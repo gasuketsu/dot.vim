@@ -33,6 +33,7 @@ Plug 'sjl/splice.vim'
 Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
+Plug 'rust-lang/rust.vim'
 " Color Schemes
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
