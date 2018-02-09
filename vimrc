@@ -170,8 +170,6 @@ nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
 "------------------------------------
 " NERDTree
 "------------------------------------
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '~'
 nmap <silent> <F9> :<C-u>NERDTreeToggle<CR>
 
 "------------------------------------
