@@ -1,13 +1,13 @@
 " Font
 if has("win32") || has("win64")
-  set guifont=CamingoCode:h11:cANSI
-  set printfont=CamingoCode:h11:cANSI
+  set guifont=Sarasa\ Mono\ J:h11:cANSI
+  set printfont=Sarasa\ Mono\ J:h11:cANSI
 elseif has("mac")
-  set guifont=Migu\ 2M:h16
-  set printfont=Migu\ 2M:h16
+  set guifont=Sarasa\ Mono\ J:h16
+  set printfont=Sarasa\ Mono\ J:h16
 else
-  set guifont=Migu\ 2M\ 11
-  set printfont=Migu\ 2M\ 11
+  set guifont=Sarasa\ Mono\ J\ 11
+  set printfont=Sarasa\ Mono\ J\ 11
 endif
 
 set linespace=0
