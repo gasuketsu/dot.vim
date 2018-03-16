@@ -191,7 +191,6 @@ autocmd BufWinEnter *.{md,mkd,mkdn,markdown} silent setf markdown
 "---------------------------
 " disable highlighting trailing whitespace by default.
 " (perform :ToggleWhitespace to enable highlighting)
-let g:better_whitespace_enabled = 0
 nnoremap <silent> <leader>w :ToggleWhitespace<CR>
 vnoremap <silent> <F12> :StripWhitespace<CR>
 nnoremap <silent> <F12> :StripWhitespace<CR>
