@@ -17,7 +17,9 @@ call plug#begin(expand(s:plugged_dir))
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -170,7 +172,7 @@ nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
 "------------------------------------
 " NERDTree
 "------------------------------------
-nmap <silent> <F9> :<C-u>NERDTreeToggle<CR>
+nmap <silent> <C-o> :<C-u>NERDTreeToggle<CR>
 
 "------------------------------------
 " ctrlp.vim
