@@ -37,16 +37,13 @@ Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
 " Color Schemes
-Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'tomasr/molokai'
+Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Color Scheme
 set t_Co=256
-let g:solarized_italic=0
-let g:solarized_termcolors=256
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
