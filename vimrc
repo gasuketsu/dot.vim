@@ -36,6 +36,7 @@ Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'kien/rainbow_parentheses.vim'
 " Color Schemes
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sickill/vim-monokai'
@@ -44,8 +45,8 @@ call plug#end()
 
 " Color Scheme
 set t_Co=256
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
@@ -229,3 +230,12 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+"-----------------------------
+" rainbow parentheses
+"-----------------------------
+" Always enable Rainbow Parentheses
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
