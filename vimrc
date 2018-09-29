@@ -37,6 +37,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 " Color Schemes
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sickill/vim-monokai'
