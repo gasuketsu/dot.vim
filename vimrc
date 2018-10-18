@@ -38,6 +38,7 @@ Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 " Color Schemes
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sickill/vim-monokai'
@@ -240,3 +241,9 @@ autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
+
+"----------------
+" pymode
+"----------------
+let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 88
