@@ -40,7 +40,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 " Color Schemes
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
 call plug#end()
@@ -52,7 +52,6 @@ let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
-let g:airline_theme='gruvbox'
 
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
