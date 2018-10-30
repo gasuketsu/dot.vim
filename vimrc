@@ -39,6 +39,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'dag/vim-fish'
 " Color Schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
