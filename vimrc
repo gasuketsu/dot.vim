@@ -34,7 +34,6 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'sjl/splice.vim'
 Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
-Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
