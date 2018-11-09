@@ -24,7 +24,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'milkypostman/vim-togglelist'
-Plug 'sandeepcr529/Buffet.vim'
+Plug 'ap/vim-buftabline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'gasuketsu/gtags.vim'
@@ -146,9 +146,6 @@ set tags+=tags;~/
 " Editor
 nnoremap Y y$
 
-" CtrlP
-let g:ctrlp_working_path_mode = 'ra'
-
 " Gtags
 nnoremap tg :<C-u>Gtags -g
 nnoremap <silent> tf :<C-u>Gtags -f %<CR>
@@ -162,8 +159,11 @@ nnoremap <silent> <C-k> :<C-u>cp<CR>
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" Buffet
-nnoremap <silent> <leader>b :Bufferlist<CR>
+" fzf
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
+
 
 " change current directory when changing buffer
 "set autochdir
@@ -173,14 +173,6 @@ nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
 " NERDTree
 "------------------------------------
 nmap <silent> <C-o> :<C-u>NERDTreeToggle<CR>
-
-"------------------------------------
-" ctrlp.vim
-"------------------------------------
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_root_markers = ['.ctrlp']
-let g:ctrlp_open_new_file = 'r'
 
 "---------------------
 " FileType settings
