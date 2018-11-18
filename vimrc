@@ -47,13 +47,14 @@ Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 " Color Scheme
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
-let g:srcery_inverse_matches=1
-let g:srcery_inverse_match_paren=1
 set background=dark
-colorscheme srcery
+colorscheme gruvbox
 
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
