@@ -24,7 +24,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'milkypostman/vim-togglelist'
-Plug 'ap/vim-buftabline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'gasuketsu/gtags.vim'
@@ -60,8 +59,9 @@ let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
 
-" Buffers and Tab Mode
+" Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
 
 "---------------------------------------
 " Display configuration
