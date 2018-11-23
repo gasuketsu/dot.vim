@@ -245,3 +245,10 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 " pymode
 "----------------
 let g:pymode_options_max_line_length = 88
+
+" Post hook to source machine-specific configuration
+" (should be placed at the last of this file)
+let s:local_rc = expand($HOME.'/.vimrc_local')
+if filereadable(s:local_rc)
+  execute 'source' s:local_rc
+endif
