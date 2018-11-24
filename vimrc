@@ -38,13 +38,16 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'dag/vim-fish'
-" Color Schemes
+" colorschemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
+"-----------------------------
+" Visual configuration
+"-----------------------------
 " Enable truecolor if possible
 if has("termguicolors")
   set termguicolors
@@ -52,7 +55,7 @@ if has("termguicolors")
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" Color Scheme
+" Colorscheme
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
@@ -63,9 +66,9 @@ colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 
-"---------------------------------------
+"-----------------------------
 " Display configuration
-"---------------------------------------
+"-----------------------------
 set shortmess+=I
 set shellslash
 set encoding=utf-8
@@ -83,9 +86,9 @@ set laststatus=2
 set showcmd
 set display=lastline
 
-"---------------------------------------
+"-----------------------------
 " Editor configuration
-"---------------------------------------
+"-----------------------------
 set mouse=a
 set nobackup
 set noswapfile
@@ -142,18 +145,21 @@ if has("win32") || has("win64")
   let IM_CtrlMode = 4
 endif
 
-"---------------------------------------
+" Yank to end of line
+nnoremap Y y$
+" turn off search highlighting until the next search
+nnoremap <C-L> :nohl<CR><C-L>
+" change current directory when changing buffer
+nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
+
+"-----------------------------
 " Ctags
-"---------------------------------------
+"-----------------------------
 set tags+=tags;~/
 
-"---------------------------------------
-" Keyboard Remap
-"---------------------------------------
-" Editor
-nnoremap Y y$
-
+"-----------------------------
 " Gtags
+"-----------------------------
 nnoremap tg :<C-u>Gtags -g
 nnoremap <silent> tf :<C-u>Gtags -f %<CR>
 nnoremap <silent> tt :<C-u>Gtags <C-r><C-w><CR>
@@ -162,58 +168,40 @@ nnoremap <silent> <C-Q> :<C-u>ccl<CR>
 nnoremap <silent> <C-j> :<C-u>cn<CR>
 nnoremap <silent> <C-k> :<C-u>cp<CR>
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
-
+"-----------------------------
 " fzf
+"-----------------------------
+let g:fzf_layout = { 'up': '~40%' }
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>g :GFiles<CR>
 
-
-" change current directory when changing buffer
-"set autochdir
-nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
-
-"------------------------------------
+"-----------------------------
 " NERDTree
-"------------------------------------
+"-----------------------------
 nmap <silent> <C-o> :<C-u>NERDTreeToggle<CR>
 
-"---------------------
-" FileType settings
-"---------------------
-" Markdown
-autocmd BufWinEnter *.{md,mkd,mkdn,markdown} silent setf markdown
-
-"---------------------------
+"-----------------------------
 " vim-better-whitespace
-"---------------------------
+"-----------------------------
 " disable highlighting trailing whitespace by default.
 " (perform :ToggleWhitespace to enable highlighting)
 nnoremap <silent> <leader>w :ToggleWhitespace<CR>
 vnoremap <silent> <F12> :StripWhitespace<CR>
 nnoremap <silent> <F12> :StripWhitespace<CR>
 
-"--------------------------
+"-----------------------------
 " multiple cursors
-"--------------------------
+"-----------------------------
 let g:multiple_cursor_use_default_mapping=0
 let g:multiple_cursor_next_key='<C-n>'
 let g:multiple_cursor_prev_key='<C-h>'
 let g:multiple_cursor_skip_key='<C-x>'
 let g:multiple_cursor_quit_key='<Esc>'
 
-"--------------------------
-" splice.vim
-"--------------------------
-let g:splice_initial_layout_grid = 0
-let g:splice_initial_scrollbind_grid = 1
-
-"--------------------------
+"-----------------------------
 " clang-format
-"--------------------------
+"-----------------------------
 let g:clang_format#command = "clang-format-3.8"
 let g:clang_format#code_style = "mozilla"
 let g:clang_format#style_options = {
@@ -241,9 +229,9 @@ autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
-"----------------
+"-----------------------------
 " pymode
-"----------------
+"-----------------------------
 let g:pymode_options_max_line_length = 88
 
 " Post hook to source machine-specific configuration
