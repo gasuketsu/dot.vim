@@ -221,7 +221,9 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 "-----------------------------
 " pymode
 "-----------------------------
+let g:pymode_python = 'python3'
 let g:pymode_options_max_line_length = 88
+let g:pymode_breakpoint = 0
 
 " Post hook to source machine-specific configuration
 " (should be placed at the last of this file)
