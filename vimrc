@@ -202,7 +202,6 @@ let g:multiple_cursor_quit_key='<Esc>'
 "-----------------------------
 " clang-format
 "-----------------------------
-let g:clang_format#command = "clang-format-3.8"
 let g:clang_format#code_style = "mozilla"
 let g:clang_format#style_options = {
       \ "AlignEscapedNewlinesLeft": "true",
