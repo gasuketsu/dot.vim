@@ -13,8 +13,8 @@ function! s:plug.is_installed(name)
 endfunction
 
 let s:plugged_dir = has("win32") || has("win64") ? '~/vimfiles/plugged/' : '~/.vim/plugged/'
+
 call plug#begin(expand(s:plugged_dir))
-Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -25,26 +25,19 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'milkypostman/vim-togglelist'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'gasuketsu/gtags.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'sjl/splice.vim'
-Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'dag/vim-fish'
-" colorschemes
-Plug 'nanotech/jellybeans.vim'
-Plug 'sickill/vim-monokai'
+Plug 'fatih/vim-go'
+Plug 'cespare/vim-toml'
+" Color Schemes
 Plug 'morhetz/gruvbox'
-Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 "-----------------------------
@@ -87,6 +80,8 @@ set cmdheight=2
 set laststatus=2
 set showcmd
 set display=lastline
+set updatetime=100
+set signcolumn=yes
 
 "-----------------------------
 " Editor configuration
@@ -119,13 +114,12 @@ set notimeout
 set ttimeout
 set timeoutlen=200
 
-" Indentation
+" Default Indentation
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=0
 set cindent
-set cino=>2,l1,N-s,g0,(0,W2
+set cino=>2,l1,:0,N-s,g0,(0,W2
 
 " enable to delete newline
 set backspace=2
@@ -137,6 +131,7 @@ set clipboard=unnamed
 set hlsearch
 set ignorecase
 set smartcase
+set wrapscan
 
 " IME settings in Insert/Search Mode for Windows environment
 " 0:off 1:off 2:on
@@ -160,20 +155,19 @@ nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
 set tags+=tags;~/
 
 "-----------------------------
-" Gtags
-"-----------------------------
-nnoremap tg :<C-u>Gtags -g
-nnoremap <silent> tf :<C-u>Gtags -f %<CR>
-nnoremap <silent> tt :<C-u>Gtags <C-r><C-w><CR>
-nnoremap <silent> tr :<C-u>Gtags -r <C-r><C-w><CR>
-nnoremap <silent> <C-Q> :<C-u>ccl<CR>
-nnoremap <silent> <C-j> :<C-u>cn<CR>
-nnoremap <silent> <C-k> :<C-u>cp<CR>
-
-"-----------------------------
 " Buffergator
 "-----------------------------
 let g:buffergator_viewport_split_policy = 'T'
+
+"-----------------------------
+" vim-qf
+"-----------------------------
+nmap <Leader>q <Plug>(qf_qf_toggle)
+nmap <Leader>l <Plug>(qf_loc_toggle)
+nmap <silent> [q <Plug>(qf_qf_previous)
+nmap <silent> ]q <Plug>(qf_qf_next)
+nmap <silent> [l <Plug>(qf_loc_previous)
+nmap <silent> ]l <Plug>(qf_loc_next)
 
 "-----------------------------
 " fzf
@@ -185,7 +179,7 @@ nnoremap <silent> <leader>fb :Buffers<CR>
 "-----------------------------
 " NERDTree
 "-----------------------------
-nmap <silent> <C-o> :<C-u>NERDTreeToggle<CR>
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 "-----------------------------
 " vim-better-whitespace
@@ -205,9 +199,9 @@ let g:multiple_cursor_prev_key='<C-h>'
 let g:multiple_cursor_skip_key='<C-x>'
 let g:multiple_cursor_quit_key='<Esc>'
 
-"-----------------------------
+"--------------------------
 " clang-format
-"-----------------------------
+"--------------------------
 let g:clang_format#detect_style_file = 1
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
