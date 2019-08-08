@@ -32,7 +32,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
@@ -51,8 +50,8 @@ if has("termguicolors")
 endif
 
 " Colorscheme
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
@@ -90,9 +89,7 @@ set mouse=a
 set nobackup
 set noswapfile
 set viminfo=
-if v:version >= 704
-  set noundofile
-endif
+set noundofile
 
 " enable to open other file in edit
 set hidden
@@ -100,10 +97,7 @@ set hidden
 " wildmode(complement)
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*.o,*.obj,*.a,*.pyc,*.DS_Store,*.db,*/tmp/*,*.swp,*.zip,*.exe,*.dll,*.so
-if has("win32") || has("win64")
-  set wildignore+=NTUSER*,ntuser*
-endif
+set wildignore+=*.o,*.obj,*.a,*.pyc,*.DS_Store,*.db,*/tmp/*,*.swp,*.zip,*.exe,*.dll,*.so,NTUSER*,ntuser*
 
 " no beep
 set vb t_vb=
@@ -120,6 +114,8 @@ set tabstop=4
 set shiftwidth=0
 set cindent
 set cino=>2,l1,:0,N-s,g0,(0,W2
+" per-filetype specific indentation
+autocmd FileType yaml   setlocal tabstop=2
 
 " enable to delete newline
 set backspace=2
@@ -133,21 +129,12 @@ set ignorecase
 set smartcase
 set wrapscan
 
-" IME settings in Insert/Search Mode for Windows environment
-" 0:off 1:off 2:on
-if has("win32") || has("win64")
-    set iminsert=0
-    set imsearch=0
-  " Fix IM control mode
-  let IM_CtrlMode = 4
-endif
-
 " Yank to end of line
 nnoremap Y y$
 " turn off search highlighting until the next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <silent> <C-l> :nohl<CR>
 " change current directory when changing buffer
-nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
+nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
 
 "-----------------------------
 " Ctags
@@ -162,8 +149,8 @@ let g:buffergator_viewport_split_policy = 'T'
 "-----------------------------
 " vim-qf
 "-----------------------------
-nmap <Leader>q <Plug>(qf_qf_toggle)
-nmap <Leader>l <Plug>(qf_loc_toggle)
+nmap <Leader>qq <Plug>(qf_qf_toggle)
+nmap <Leader>ql <Plug>(qf_loc_toggle)
 nmap <silent> [q <Plug>(qf_qf_previous)
 nmap <silent> ]q <Plug>(qf_qf_next)
 nmap <silent> [l <Plug>(qf_loc_previous)
@@ -179,7 +166,7 @@ nnoremap <silent> <leader>fb :Buffers<CR>
 "-----------------------------
 " NERDTree
 "-----------------------------
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 "-----------------------------
 " vim-better-whitespace
@@ -187,8 +174,8 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 " disable highlighting trailing whitespace by default.
 " (perform :ToggleWhitespace to enable highlighting)
 nnoremap <silent> <leader>w :ToggleWhitespace<CR>
-vnoremap <silent> <F12> :StripWhitespace<CR>
-nnoremap <silent> <F12> :StripWhitespace<CR>
+vnoremap <silent> <leader>sw :StripWhitespace<CR>
+nnoremap <silent> <leader>sw :StripWhitespace<CR>
 
 "-----------------------------
 " multiple cursors
@@ -204,10 +191,10 @@ let g:multiple_cursor_quit_key='<Esc>'
 "--------------------------
 let g:clang_format#detect_style_file = 1
 " map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>Cf :ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>Cf :ClangFormat<CR>
 " Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
+nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 
 "-----------------------------
 " rainbow parentheses
@@ -219,11 +206,19 @@ autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
 "-----------------------------
-" pymode
+" black
 "-----------------------------
-let g:pymode_python = 'python3'
-let g:pymode_options_max_line_length = 88
-let g:pymode_breakpoint = 0
+let g:black_virtualenv = $HOME.'/.config/nvim/py3nvim/.venv'
+
+"-----------------------------
+" vim-go
+"-----------------------------
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_code_completion_enabled = 0
+let g:go_def_mapping_enabled = 0
+
 
 " Post hook to source machine-specific configuration
 " (should be placed at the last of this file)
