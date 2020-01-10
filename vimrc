@@ -19,22 +19,18 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'romainl/vim-qf'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
-Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'dag/vim-fish'
-Plug 'fatih/vim-go'
-Plug 'cespare/vim-toml'
+Plug 'Yggdroot/indentLine'
+Plug 'sheerun/vim-polyglot'
 " Color Schemes
 Plug 'morhetz/gruvbox'
 call plug#end()
@@ -56,9 +52,8 @@ let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
 
-" Airline
+" statusline (airline)
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
 
 "-----------------------------
 " Display configuration
@@ -72,7 +67,6 @@ set number
 set cursorline
 set wrap
 set list
-set listchars=tab:>-,trail:.,extends:<,precedes:>
 set ambiwidth=double
 
 set cmdheight=2
@@ -80,7 +74,6 @@ set laststatus=2
 set showcmd
 set display=lastline
 set updatetime=100
-set signcolumn=yes
 
 "-----------------------------
 " Editor configuration
@@ -109,13 +102,8 @@ set ttimeout
 set timeoutlen=200
 
 " Default Indentation
-set expandtab
-set tabstop=4
-set shiftwidth=0
 set cindent
-set cino=>2,l1,:0,N-s,g0,(0,W2
-" per-filetype specific indentation
-autocmd FileType yaml   setlocal tabstop=2
+set cino=l1,:0,N-s,g0,(0,W4,m1
 
 " enable to delete newline
 set backspace=2
@@ -135,6 +123,8 @@ nnoremap Y y$
 nnoremap <silent> <C-l> :nohl<CR>
 " change current directory when changing buffer
 nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
+
+map q <Nop>
 
 "-----------------------------
 " Ctags
@@ -162,6 +152,11 @@ nmap <silent> ]l <Plug>(qf_loc_next)
 nnoremap <silent> <leader>ff :Files<CR>
 nnoremap <silent> <leader>fg :GFiles<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
+
+"-----------------------------
+" NERDCommenter
+"-----------------------------
+let g:NERDDefaultAlign = 'left'
 
 "-----------------------------
 " NERDTree
@@ -205,19 +200,17 @@ autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
-"-----------------------------
-" black
-"-----------------------------
-let g:black_virtualenv = $HOME.'/.config/nvim/py3nvim/.venv'
 
 "-----------------------------
-" vim-go
+" sheerun/vim-polyglot
 "-----------------------------
+" go
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-let g:go_code_completion_enabled = 0
-let g:go_def_mapping_enabled = 0
+" cpp
+let g:cpp_class_decl_highlight = 1
+let g:cpp_class_scope_highlight = 1
 
 
 " Post hook to source machine-specific configuration
