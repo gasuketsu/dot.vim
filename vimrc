@@ -30,6 +30,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'godlygeek/tabular' " required for vim-polyglot
 Plug 'sheerun/vim-polyglot'
 " Color Schemes
 Plug 'morhetz/gruvbox'
@@ -212,6 +213,8 @@ let g:go_highlight_function_calls = 1
 " cpp
 let g:cpp_class_decl_highlight = 1
 let g:cpp_class_scope_highlight = 1
+" markdown
+let g:vim_markdown_conceal_code_blocks = 0
 
 
 " Post hook to source machine-specific configuration
