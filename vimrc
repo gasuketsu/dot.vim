@@ -67,6 +67,7 @@ set number
 set cursorline
 set wrap
 set list
+set listchars=tab:>\ ,trail:-
 set ambiwidth=double
 
 set cmdheight=2
