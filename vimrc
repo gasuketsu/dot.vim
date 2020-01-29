@@ -69,7 +69,7 @@ set cursorline
 set wrap
 set list
 set listchars=tab:>\ ,trail:-,nbsp:+
-set ambiwidth=double
+set ambiwidth=single
 
 set cmdheight=2
 set laststatus=2
