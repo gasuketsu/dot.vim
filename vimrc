@@ -44,12 +44,15 @@ if has("termguicolors")
   set termguicolors
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
 endif
 
 " Colorscheme
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
+let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
 
