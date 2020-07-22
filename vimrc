@@ -33,7 +33,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular' " required for vim-polyglot
 Plug 'sheerun/vim-polyglot'
 " Color Schemes
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 "-----------------------------
@@ -58,8 +59,11 @@ let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 let g:gruvbox_italic=1
+let g:gruvbox_material_palette = 'original'
+let g:gruvbox_material_enable_bold = 1
+
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " statusline (airline)
 let g:airline#extensions#tabline#enabled = 1
