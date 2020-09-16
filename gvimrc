@@ -1,13 +1,13 @@
 " Font
 if has("win32") || has("win64")
-  set guifont=Sarasa\ Term\ J:h11:cANSI
-  set printfont=Sarasa\ Term\ J:h11:cANSI
+  set guifont=Sarasa\Fixed\ J:h11:cANSI
+  set printfont=Sarasa\Fixed\ J:h11:cANSI
 elseif has("mac")
-  set guifont=Sarasa\ Term\ J:h16
-  set printfont=Sarasa\ Term\ J:h16
+  set guifont=Sarasa\Fixed\ J:h16
+  set printfont=Sarasa\Fixed\ J:h16
 else
-  set guifont=Sarasa\ Term\ J\ 11
-  set printfont=Sarasa\ Term\ J\ 11
+  set guifont=Sarasa\Fixed\ J\ 11
+  set printfont=Sarasa\Fixed\ J\ 11
 endif
 
 set linespace=0
