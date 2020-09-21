@@ -66,6 +66,7 @@ set background=dark
 colorscheme gruvbox-material
 
 " statusline (airline)
+let g:airline_theme = 'gruvbox_material'
 let g:airline#extensions#tabline#enabled = 1
 
 "-----------------------------
@@ -116,10 +117,11 @@ set ttimeout
 set timeoutlen=200
 
 " Default Indentation
-set tabstop=4
-set shiftwidth=4
+set expandtab
+set tabstop=2
+set shiftwidth=2
 set cindent
-set cino=l1,:0,N-s,g0,(0,W4,m1
+set cino=l1,:0,g0,(0,W4,m1
 
 " enable to delete newline
 set backspace=2
@@ -230,6 +232,7 @@ let g:go_highlight_function_calls = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_class_scope_highlight = 1
 " markdown
+let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
 
