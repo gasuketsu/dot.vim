@@ -22,7 +22,7 @@ Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf', { 'tag': '*', 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-airline/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mhinz/vim-signify'
