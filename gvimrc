@@ -1,13 +1,13 @@
 " Font
 if has("win32") || has("win64")
-  set guifont=Sarasa\ Fixed\ J:h11:cANSI
-  set printfont=Sarasa\ Fixed\ J:h11:cANSI
+  set guifont=UDEV\ Gothic\ NF:h11:cANSI
+  set printfont=UDEV\ Gothic\ NF:h11:cANSI
 elseif has("mac")
-  set guifont=Sarasa\ Fixed\ J:h16
-  set printfont=Sarasa\ Fixed\ J:h16
+  set guifont=UDEV\ Gothic\ NF:h16
+  set printfont=UDEV\ Gothic\ NF:h16
 else
-  set guifont=Sarasa\ Fixed\ J\ 11
-  set printfont=Sarasa\ Fixed\ J\ 11
+  set guifont=UDEV\ Gothic\ NF\ 11
+  set printfont=UDEV\ Gothic\ NF\ 11
 endif
 
 set linespace=0
