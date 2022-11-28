@@ -1,20 +1,20 @@
 " Font
 if has("win32") || has("win64")
-  set guifont=UDEV\ Gothic\ NF:h11:cANSI
-  set printfont=UDEV\ Gothic\ NF:h11:cANSI
+  set guifont=UDEV\ Gothic\ NF:h12:cANSI
+  set printfont=UDEV\ Gothic\ NF:h12:cANSI
 elseif has("mac")
   set guifont=UDEV\ Gothic\ NF:h16
   set printfont=UDEV\ Gothic\ NF:h16
 else
-  set guifont=UDEV\ Gothic\ NF\ 11
-  set printfont=UDEV\ Gothic\ NF\ 11
+  set guifont=UDEV\ Gothic\ NF\ 12
+  set printfont=UDEV\ Gothic\ NF\ 12
 endif
 
 set linespace=0
 
 " Colorscheme
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " Default window size
 set columns=120
